@@ -15,6 +15,7 @@
 		76AE5911240F23CF00726AEC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE5910240F23CF00726AEC /* Model.swift */; };
 		76AE5913240F23D400726AEC /* MailFolderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE5912240F23D400726AEC /* MailFolderListView.swift */; };
 		76AE5915240F23D900726AEC /* BlurBackgroud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE5914240F23D900726AEC /* BlurBackgroud.swift */; };
+		76AE5919240F356800726AEC /* screen.gif in Resources */ = {isa = PBXBuildFile; fileRef = 76AE5918240F356800726AEC /* screen.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		76AE5910240F23CF00726AEC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		76AE5912240F23D400726AEC /* MailFolderListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailFolderListView.swift; sourceTree = "<group>"; };
 		76AE5914240F23D900726AEC /* BlurBackgroud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurBackgroud.swift; sourceTree = "<group>"; };
+		76AE5918240F356800726AEC /* screen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = screen.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				76AE5902240F239B00726AEC /* Assets.xcassets */,
 				76AE5907240F239B00726AEC /* LaunchScreen.storyboard */,
 				76AE590A240F239B00726AEC /* Info.plist */,
+				76AE5917240F354A00726AEC /* ScreenShot */,
 				76AE5904240F239B00726AEC /* Preview Content */,
 			);
 			path = ListExample;
@@ -87,6 +90,14 @@
 				76AE5914240F23D900726AEC /* BlurBackgroud.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		76AE5917240F354A00726AEC /* ScreenShot */ = {
+			isa = PBXGroup;
+			children = (
+				76AE5918240F356800726AEC /* screen.gif */,
+			);
+			path = ScreenShot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +160,7 @@
 			files = (
 				76AE5909240F239B00726AEC /* LaunchScreen.storyboard in Resources */,
 				76AE5906240F239B00726AEC /* Preview Assets.xcassets in Resources */,
+				76AE5919240F356800726AEC /* screen.gif in Resources */,
 				76AE5903240F239B00726AEC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

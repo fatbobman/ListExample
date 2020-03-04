@@ -26,8 +26,8 @@ struct MailFolderListView: View {
     @State var active:Bool = false
     
     init(){
-//        取消List的横线
-//        UITableView.appearance().separatorStyle = .none
+        //        取消List的横线
+        //        UITableView.appearance().separatorStyle = .none
     }
     
     var body: some View {
@@ -53,16 +53,15 @@ struct MailFolderListView: View {
                                         Image(systemName:"chevron.right")
                                             .foregroundColor(.secondary)
                                     }
-
+                                    
                                 }
-                                    .tag(folder.id.uuidString)
- //                                 .compositingGroup()
-                                    .overlay(Color.white.opacity(0.001))
-                                    .onTapGesture {
-                                        if !self.editing {
+                                .tag(folder.id.uuidString)
+                                .contentShape(Rectangle())
+                                .onTapGesture {
+                                    if !self.editing {
                                         self.folderTitle = folder.title
                                         self.active = true
-                                        }
+                                    }
                                 }
                                 
                                 /*
@@ -105,26 +104,25 @@ struct MailFolderListView: View {
                                     .opacity(self.editing ? 0 : 1)
                                     .offset(x: self.editing ? 100 : 0)
                             }
-//                           compositiongGroup 有时会抽风
-//                                .compositingGroup()
-                                .overlay(Color.white.opacity(0.001))
-                                .sheet(isPresented:self.$editFolder){Text("编辑邮箱")}
-                                .onTapGesture {
-                                    if !self.editing {
+                            .contentShape(Rectangle())
+                                
+                            .sheet(isPresented:self.$editFolder){Text("编辑邮箱")}
+                            .onTapGesture {
+                                if !self.editing {
                                     self.folderTitle = folder.title
                                     self.active = true
-                                    }
-                                    else {
-                                        self.editFolder.toggle()
-                                    }
+                                }
+                                else {
+                                    self.editFolder.toggle()
+                                }
                             }
-                        
+                            
                         }
                     }
                     .listStyle(GroupedListStyle())
-//                     设定行高
-//                    .environment(\.defaultMinListRowHeight, 40)
-                    .environment(\.editMode, self.$editMode)
+                        //                     设定行高
+                        //                    .environment(\.defaultMinListRowHeight, 40)
+                        .environment(\.editMode, self.$editMode)
                     
                     NavigationLink(destination: MailSubjectListView(folderName: self.folderTitle),isActive: self.$active){
                         EmptyView()
@@ -139,39 +137,39 @@ struct MailFolderListView: View {
                         Color.clear
                         ZStack(alignment:.top){
                             if self.editing {
-                              HStack{
+                                HStack{
                                     Spacer()
                                     Button(action:{self.addMailFolder.toggle()})
                                     {
-                                    Text("新建邮箱")
-                                        .padding(.trailing,16)
+                                        Text("新建邮箱")
+                                            .padding(.trailing,16)
                                     }
                                 }
                                 .padding(.bottom,20)
                                 
                             }
                             else {
-                            HStack{
-                                Text("刚刚更新").font(.caption)
-                            }
-                            .padding(.bottom,20)
-                            HStack{
-                                Spacer()
-                                Button(action:{self.addMail.toggle()})
-                                {
-                                Image(systemName:"square.and.pencil")
-                                    .font(.system(size: 22,weight:Font.Weight.regular))
-                                    .foregroundColor(.blue)
-                                    .padding(.trailing,16)
+                                HStack{
+                                    Text("刚刚更新").font(.caption)
                                 }
-                            }
-                            .padding(.bottom,20)
+                                .padding(.bottom,20)
+                                HStack{
+                                    Spacer()
+                                    Button(action:{self.addMail.toggle()})
+                                    {
+                                        Image(systemName:"square.and.pencil")
+                                            .font(.system(size: 22,weight:Font.Weight.regular))
+                                            .foregroundColor(.blue)
+                                            .padding(.trailing,16)
+                                    }
+                                }
+                                .padding(.bottom,20)
                             }
                         }
                     }
-                        .blurBackground(style: .systemChromeMaterial)
-                        .frame(height:83)
-                        .sheet(isPresented: self.$addMail){Text("添加邮件")}
+                    .blurBackground(style: .systemChromeMaterial)
+                    .frame(height:83)
+                    .sheet(isPresented: self.$addMail){Text("添加邮件")}
                 }
                 
                 
@@ -225,7 +223,7 @@ struct MailSubjectListView: View {
     var folderName:String
     var body: some View {
         Text("Mail Inbox")
-        .navigationBarTitle(folderName)
+            .navigationBarTitle(folderName)
     }
 }
 

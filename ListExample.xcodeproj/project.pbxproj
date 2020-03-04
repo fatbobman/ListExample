@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		76AE58FD240F239A00726AEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE58FC240F239A00726AEC /* AppDelegate.swift */; };
 		76AE58FF240F239A00726AEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE58FE240F239A00726AEC /* SceneDelegate.swift */; };
-		76AE5901240F239A00726AEC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE5900240F239A00726AEC /* ContentView.swift */; };
 		76AE5903240F239B00726AEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76AE5902240F239B00726AEC /* Assets.xcassets */; };
 		76AE5906240F239B00726AEC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76AE5905240F239B00726AEC /* Preview Assets.xcassets */; };
 		76AE5909240F239B00726AEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76AE5907240F239B00726AEC /* LaunchScreen.storyboard */; };
+		76AE5911240F23CF00726AEC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE5910240F23CF00726AEC /* Model.swift */; };
+		76AE5913240F23D400726AEC /* MailFolderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE5912240F23D400726AEC /* MailFolderListView.swift */; };
+		76AE5915240F23D900726AEC /* BlurBackgroud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE5914240F23D900726AEC /* BlurBackgroud.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		76AE58F9240F239A00726AEC /* ListExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76AE58FC240F239A00726AEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76AE58FE240F239A00726AEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		76AE5900240F239A00726AEC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		76AE5902240F239B00726AEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76AE5905240F239B00726AEC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		76AE5908240F239B00726AEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76AE590A240F239B00726AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76AE5910240F23CF00726AEC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		76AE5912240F23D400726AEC /* MailFolderListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailFolderListView.swift; sourceTree = "<group>"; };
+		76AE5914240F23D900726AEC /* BlurBackgroud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurBackgroud.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			children = (
 				76AE58FC240F239A00726AEC /* AppDelegate.swift */,
 				76AE58FE240F239A00726AEC /* SceneDelegate.swift */,
-				76AE5900240F239A00726AEC /* ContentView.swift */,
+				76AE5912240F23D400726AEC /* MailFolderListView.swift */,
+				76AE5910240F23CF00726AEC /* Model.swift */,
+				76AE5916240F2A2800726AEC /* Utils */,
 				76AE5902240F239B00726AEC /* Assets.xcassets */,
 				76AE5907240F239B00726AEC /* LaunchScreen.storyboard */,
 				76AE590A240F239B00726AEC /* Info.plist */,
@@ -73,6 +79,14 @@
 				76AE5905240F239B00726AEC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		76AE5916240F2A2800726AEC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				76AE5914240F23D900726AEC /* BlurBackgroud.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,7 +162,9 @@
 			files = (
 				76AE58FD240F239A00726AEC /* AppDelegate.swift in Sources */,
 				76AE58FF240F239A00726AEC /* SceneDelegate.swift in Sources */,
-				76AE5901240F239A00726AEC /* ContentView.swift in Sources */,
+				76AE5913240F23D400726AEC /* MailFolderListView.swift in Sources */,
+				76AE5915240F23D900726AEC /* BlurBackgroud.swift in Sources */,
+				76AE5911240F23CF00726AEC /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

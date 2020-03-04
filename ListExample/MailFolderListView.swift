@@ -53,11 +53,10 @@ struct MailFolderListView: View {
                                         Image(systemName:"chevron.right")
                                             .foregroundColor(.secondary)
                                     }
-                                 .compositingGroup()
-                                }
-                                  
 
+                                }
                                     .tag(folder.id.uuidString)
+ //                                 .compositingGroup()
                                     .overlay(Color.white.opacity(0.001))
                                     .onTapGesture {
                                         if !self.editing {
@@ -87,7 +86,6 @@ struct MailFolderListView: View {
                                     .foregroundColor(.blue)
                                     .onTapGesture{
                                         self.addMailFolder.toggle()
-                                        print("abc")
                                 }
                             }
                             .sheet(isPresented: self.$addMailFolder){Text("添加邮箱")}
@@ -226,7 +224,7 @@ struct MailFolderListView: View {
 struct MailSubjectListView: View {
     var folderName:String
     var body: some View {
-        Text("mail")
+        Text("Mail Inbox")
         .navigationBarTitle(folderName)
     }
 }

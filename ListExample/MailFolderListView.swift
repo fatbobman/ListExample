@@ -29,6 +29,7 @@ struct MailFolderListView: View {
         //        取消List的横线
         //        UITableView.appearance().separatorStyle = .none
     }
+
     
     var body: some View {
         NavigationView{
@@ -38,23 +39,25 @@ struct MailFolderListView: View {
                     List(selection: self.$store.folderSelection){
                         ForEach(store.fixedFolders){ folder in
                             if self.editing || (!self.editing&&folder.show) {
-                                HStack{
-                                    Image(systemName: folder.image)
-                                        .font(.system(size: 22,weight:Font.Weight.regular))
-                                        .frame(width:22)
-                                        .foregroundColor(.blue)
-                                        .padding(.trailing,4)
-                                    Text(folder.title)
-                                    Spacer()
-                                    HStack{
-                                        //SwiftUI在这里会再度犯病.如果再增加点条件判断,会编译超时 :(
-                                        Text(folder.unReadMailNumber > 0 ? String(folder.unReadMailNumber) : "")
-                                            .foregroundColor(.secondary)
-                                        Image(systemName:"chevron.right")
-                                            .foregroundColor(.secondary)
-                                    }
-                                    
-                                }
+//                                SwiftUI在这里会再度犯病.如果再增加点条件判断,会编译超时 :(
+//                                拆出来单独写就ok了.
+//                                HStack{
+//                                    Image(systemName: folder.image)
+//                                        .font(.system(size: 22,weight:Font.Weight.regular))
+//                                        .frame(width:22)
+//                                        .foregroundColor(.blue)
+//                                        .padding(.trailing,4)
+//                                    Text(folder.title)
+//                                    Spacer()
+//                                    HStack{
+//                                        Text(folder.unReadMailNumber > 0 ? String(folder.unReadMailNumber) : "")
+//                                            .foregroundColor(.secondary)
+//                                        Image(systemName:"chevron.right")
+//                                            .foregroundColor(.secondary)
+//                                    }
+//
+//                                }
+                            self.folderRow(folder: folder)
                                 .tag(folder.id.uuidString)
                                 .contentShape(Rectangle())
                                 .onTapGesture {
@@ -177,6 +180,37 @@ struct MailFolderListView: View {
             .edgesIgnoringSafeArea(.bottom)
             .navigationBarTitle("邮箱")
             .navigationBarItems(trailing: myEditButton())
+        }
+        
+    }
+    
+    func folderRow(folder:FixedFolder) -> some View{
+        //由于直接SwiftUI对于单个View的解析有点问题,判断一多就容易崩,只能单独把这段提出来
+        var mailNumberText = AnyView(Text(folder.unReadMailNumber > 0 ? String(folder.unReadMailNumber) : ""))
+        var vipLogo = AnyView(EmptyView())  
+        
+        if folder.title == "VIP" {
+            mailNumberText = AnyView(EmptyView())
+            vipLogo = AnyView(Image(systemName: "info.circle"))
+        }
+        
+        
+        return HStack{
+            Image(systemName: folder.image)
+                .font(.system(size: 22,weight:Font.Weight.regular))
+                .frame(width:22)
+                .foregroundColor(.blue)
+                .padding(.trailing,4)
+            Text(folder.title)
+            Spacer()
+            HStack{
+                    vipLogo.foregroundColor(.blue)
+                    mailNumberText
+                    .foregroundColor(.secondary)
+                Image(systemName:"chevron.right")
+                    .foregroundColor(.secondary)
+            }
+            
         }
     }
     

@@ -66,17 +66,6 @@ struct MailFolderListView: View {
                                         self.active = true
                                     }
                                 }
-                                
-                                /*
-                                 本来更喜欢这种用法,不过在这个程序会出现编译超时.
-                                 .background(
-                                 NavigationLink(destination: MailSubjectListView(folderName: folder.tilte), tag: folder.id, selection: self.$linkId)
-                                 {
-                                 EmptyView()
-                                 }
-                                 )
-                                 */
-                                
                             }
                         }
                         .onMove(perform: self.moveFolder)
